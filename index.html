@@ -109,50 +109,6 @@
                 width: 100%;
             }
         }
-        
-        /* Design für die Websites-Spiele */
-        .webgame {
-            background-color: #34495e;
-            padding: 2rem;
-            width: 350px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease-in-out;
-            text-align: center;
-            margin: 1rem;
-        }
-        .webgame:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Design für die Handygames */
-        .mobile-game {
-            background-color: #34495e;
-            padding: 2rem;
-            width: 350px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease-in-out;
-            text-align: center;
-            margin: 1rem;
-        }
-        .mobile-game:hover {
-            transform: translateY(-5px);
-        }
-        .mobile-game a {
-            display: block;
-            background-color: #1abc9c;
-            padding: 0.8rem 1.2rem;
-            color: #fff;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 8px;
-            margin-top: 1rem;
-            transition: background-color 0.3s;
-        }
-        .mobile-game a:hover {
-            background-color: #16a085;
-        }
 
     </style>
 </head>
@@ -207,24 +163,42 @@
         </div>
 
         <!-- Handygames -->
-        <div class="mobile-game">
+        <div class="game" id="monopoly">
             <h2>Monopoly</h2>
             <p>Monopoly ist das bekannte Brettspiel, das nun auch als Handyspiel verfügbar ist. Hier kannst du gegen Freunde oder KI spielen, um das Spielbrett zu erobern.</p>
-            <a href="https://www.google.com/search?q=Monopoly+mobile">Jetzt herunterladen</a>
+            <a href="#" id="monopolyLink">Jetzt herunterladen</a>
         </div>
 
-        <div class="mobile-game">
+        <div class="game" id="supercitycon">
             <h2>SupercityCon</h2>
             <p>SupercityCon ist ein Städtebauspiel, bei dem du deine eigene Stadt aufbaust und verwaltest. Erweitere deine Stadt, löse Herausforderungen und verbessere dein Königreich.</p>
-            <a href="https://store.steampowered.com/app/595400/Supercity/">Jetzt herunterladen</a>
+            <a href="#" id="supercityconLink">Jetzt herunterladen</a>
         </div>
 
-        <div class="mobile-game">
+        <div class="game" id="offlinegames">
             <h2>Offline Games</h2>
             <p>Offline Games bietet eine Sammlung von Spielen, die du ohne Internetverbindung spielen kannst. Ideal für unterwegs oder wenn du keine Verbindung hast!</p>
-            <a href="https://www.google.com/search?q=Offline+Games+mobile">Jetzt herunterladen</a>
+            <a href="#" id="offlinegamesLink">Jetzt herunterladen</a>
         </div>
 
     </main>
+
     <footer>
-        &copy; 202
+        &copy; 2025 Raffael Bauer. Alle Rechte vorbehalten.
+    </footer>
+
+    <script>
+        // Erkennung des Betriebssystems des Nutzers
+        function detectDevice() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (/android/i.test(userAgent)) {
+                // Für Android-Geräte
+                document.getElementById("monopolyLink").href = "https://play.google.com/store/apps/details?id=com.ea.gp.monopoly&hl=de&gl=US";
+                document.getElementById("supercityconLink").href = "https://play.google.com/store/apps/details?id=com.gameinsight.supercitycon&hl=de&gl=US";
+                document.getElementById("offlinegamesLink").href = "https://play.google.com/store/apps/details?id=com.google.android.apps.offlinegames&hl=de&gl=US";
+            } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+                // Für iOS-Geräte
+                document.getElementById("monopolyLink").href = "https://apps.apple.com/de/app/monopoly/id402233694";
+                document.getElementById("supercityconLink").href = "https://apps.apple.com/de/app/supercitycon/id567890123";
+                document.getElementById("offlinegamesLink").href = "https://apps.apple.com
